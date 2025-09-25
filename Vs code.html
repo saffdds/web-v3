@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cos'è Visual Studio Code?</title>
+  <script type="text/javascript">
+    function startTime() {
+      var today = new Date();
+      var h = today.getHours();
+      var m = today.getMinutes();       
+      var s = today.getSeconds();
+      m = checkTime(m);
+      s = checkTime(s);
+      document.getElementById('txt').innerHTML = h + ":" + m + ":" + s;
+      setTimeout(startTime, 500);
+    }
+
+    function checkTime(i) {
+      if (i < 10) {
+        i = "0" + i;
+      }
+      return i;
+    }
+  </script>
+  <script>
+  function mostraDataSeparata() {
+  const oggi = new Date();
+  const opzioni = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+  const dataFormattata = oggi.toLocaleDateString('it-IT', opzioni);
+  document.getElementById("dataOggi").innerHTML = "📅 Oggi è " + dataFormattata;
+}
+
+</script>
+
+
+  <style>
+    @page { size: 21cm 29.7cm; margin: 2cm }
+    p { margin-bottom: 0.25cm; line-height: 115%; background: transparent }
+    pre { background: transparent }
+    pre.western { font-family: "Courier New", monospace; font-size: 10pt }
+    pre.cjk { font-family: "NSimSun", monospace; font-size: 10pt }
+    pre.ctl { font-family: "Courier New", monospace; font-size: 10pt }
+
+    a:visited {
+      color: blue;
+    }
+
+    ol {
+      counter-reset: item;
+    }
+    li {
+      display: block;
+    }
+    li:before {
+      content: counter(item) ". ";
+      counter-increment: item;
+      color: red;
+    }
+
+    button {
+      background-color: blue;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+  </style>
+  
+</head>
+<body onload="startTime(); mostraDataSeparata()">
+
+  <div id="txt"></div>
+
+  <div id="dataOggi" style="font-size: 18px; margin-top: 20px;"></div>
+
+  <h1>Accessibilità</h1>
+  <button onclick="readPage()">🗣️ Leggi la pagina</button>
+  <button onclick="stopReading()">🛑 Interrompi</button>
+  <hr>
+
+  <script>
+    let utterance;
+
+    function readPage() {
+      const text = document.body.innerText;
+      utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = "it-IT";
+      utterance.rate = 1;
+      utterance.pitch = 1;
+      utterance.volume = 1;
+      speechSynthesis.speak(utterance);
+    }
+
+    function stopReading() {
+      speechSynthesis.cancel();
+    }
+  </script>
+
+  <h1>Cos'è e perché uso VS Code</h1>
+  <h2>Ora vediamo cos'è VS CODE (Visual Studio Code)</h2>
+
+  <p><b>Info su <u>Visual Studio Code</u></b></p>
+  <p>È un editor di codice sorgente gratuito e open source sviluppato da <u>Microsoft</u>. È disponibile per Windows, macOS e Linux.</p>
+
+  <ul>
+    <li>Supporta moltissimi linguaggi di programmazione (HTML, CSS, JavaScript, Python, Java, C++, ecc.)</li>
+    <li>Estensioni personalizzabili per ogni tipo di progetto</li>
+    <li>Live Server per anteprima immediata delle pagine web</li>
+    <li>Controllo versione integrato con Git e GitHub</li>
+    <li>Terminale integrato per eseguire comandi direttamente nell’editor</li>
+    <li>Ambiente leggero e veloce, ideale anche per PC meno potenti</li>
+  </ul>
+
+  <p style="background-color: navy;color:aqua"
+  >Se ti serve qualcosa per scrivere codice, puoi scaricare estensioni dal Marketplace. Sono gratuite!</p>
+<p>
+    <a href="https://it.wikipedia.org/wiki/Visual_Studio_Code"> Informazioni su Visual Studio Code </a>
+</p>
+  <h1>Come scaricare o installare Visual Studio Code?</h1>
+  <h2>Dove andare per installarlo?</h2>
+  <p>Tutto quello che devi fare è visitare il sito ufficiale di download:</p>
+  <p><a href=
+    "https://code.visualstudio.com/download">
+    Sito di download di VS Code</a></p>
+
+  <ol>
+    <li>Per Windows 10 o Windows 11: <a href=
+        "https://code.visualstudio.com/docs/?dv=win64user">
+        Download Windows</a></li>
+    <li>Per Linux (Ubuntu, Debian): <a href="https://code.visualstudio.com/docs/?dv=linux64_deb">
+        Download Linux .deb</a></li>
+    <li>Per Linux (Red Hat, Fedora, SUSE): <a href="https://code.visualstudio.com/docs/?dv=linux64_rpm">Download Linux .rpm</a></li>
+    <li>
+        Per macOS (se proprio devi 😄): <a href=
+        "https://code.visualstudio.com/docs/?dv=osx">
+        Download Mac</a></li>
+  </ol>
+
+  <div>
+    <img src
+    ="https://upload.wikimedia.org/wikipedia/commons/e/e9/VS_Code_%28Insiders%29.png" width="500"
+     alt=
+     "Schermata VS Code">
+  </div>
+
+  <p>Visual Studio Code è anche molto leggero come ambiente di sviluppo.</p>
+ <p>
+    <u>Volete un video come installare </u>
+    </p>
+    <div>
+ <iframe
+  width="560" 
+  height="315" 
+
+  src=
+  "https://www.youtube.com/embed/mbPJhjp61Ck?si=0v4fCq2sOPfiI3Kz" 
+  title="YouTube video player"
+   frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy
+    ="strict-origin-when-cross-origin" 
+    allowfullscreen>
+</iframe>
+</div>
+<p>
+    Così potrete scrivere <u>(HTML,CSS,JS,C++,c,c#,java, Python) <b>Senza bestemmiare  Con blocco note</b></u>
+
+</p>
+<hr>
+  <h1> Tutorial di Visual Studio Code</h1>  
+<h2>1. Aprire un progetto</h2>
+<p>Puoi aprire una cartella di progetto cliccando su <b>File → Apri cartella</b>. VS Code caricherà tutti i file e ti permetterà di navigarli facilmente.</p>
+
+<h2>2. Scrivere codice</h2>
+<p>VS Code supporta moltissimi linguaggi. Puoi iniziare a scrivere codice in HTML, CSS, JavaScript, Python, C++, e molti altri. Il sistema di suggerimenti ti aiuta mentre scrivi.</p>
+
+<h2>3. Usare il terminale integrato</h2>
+<p>Vai su <b>Visualizza → Terminale</b> per aprire un terminale direttamente dentro l’editor. Puoi eseguire comandi, compilare codice o usare Git.</p>
+
+<h2>4. Installare estensioni</h2>
+<p>Apri il pannello delle estensioni cliccando sull’icona a forma di quadrato a sinistra. Cerca estensioni come <i>Live Server</i>, <i>Prettier</i>, <i>Python</i>, e installale con un clic.</p>
+
+<h2>5. Personalizzare l’ambiente</h2>
+<p>Puoi cambiare tema, font, e comportamento dell’editor andando su <b>File → Preferenze → Impostazioni</b>. VS Code è altamente personalizzabile.</p>
+<h1>Estensioni in Visual Studio Code</h1>
+
+<p>Le estensioni sono componenti aggiuntivi che puoi installare in Visual Studio Code per migliorare le funzionalità dell’editor. Ti permettono di personalizzare l’ambiente di sviluppo in base al linguaggio che usi, al tipo di progetto, o alle tue preferenze.</p>
+
+<h2>🔧 Cosa puoi fare con le estensioni</h2>
+<ul>
+  <li>Formattare automaticamente il codice (es. <b>Prettier</b>)</li>
+  <li>Visualizzare l’anteprima di pagine web (es. <b>Live Server</b>)</li>
+  <li>Scrivere in linguaggi specifici con supporto avanzato (es. <b>Python</b>, <b>C++</b>, <b>Java</b>)</li>
+  <li>Gestire progetti con Git e GitHub</li>
+  <li>Usare temi e icone personalizzate</li>
+</ul>
+
+<h2>📦 Come installarle</h2>
+<p>Nel pannello laterale sinistro, clicca sull’icona delle estensioni (quella a forma di quadrato). Cerca il nome dell’estensione e clicca su “Installa”. Puoi anche disinstallarle o disattivarle in qualsiasi momento.</p>
+
+<h2>💡 Consigli</h2>
+<p>Non installare troppe estensioni inutili: potrebbero rallentare l’editor. Scegli quelle che ti servono davvero per il tuo flusso di lavoro.</p>
+E tutto questo è <b><u>open source</u></b>
+Comunque per scaricarlo potete per scaricare  Lì l'installer di vs code Potete usare (Google Chrome,<a href="https://saffdds.github.io/wedd/">Mozilla Firefox</a>, Opera, Safari, Edge
+).
+<br>
+E potete usare questo strumento anche dentro le <a href="https://saffdds.github.io/html-vm/"> Macchine virtuali se proprio dovete lavorare su Linux </a> Oppure Usate  WSL, Pratica potete usare  VS code  Su tutti i sistemi più famosi Tranne il suo <u>Android,iOS</u>
+Ovviamente.
+<hr>
+<h1>Domande frequenti su Visual Studio Code</h1>
+
+<h2>🧐 VS Code è gratuito?</h2>
+<p>Sì, Visual Studio Code è completamente gratuito e open source. Puoi usarlo per progetti personali e professionali.</p>
+
+<h2>🧩 Posso usare VS Code per programmare in Python?</h2>
+<p>Certo! Basta installare l’estensione ufficiale “Python” dal Marketplace e avrai supporto completo.</p>
+
+<h2>🌐 Funziona anche offline?</h2>
+<p>Sì, puoi scrivere e modificare codice anche senza connessione. Alcune funzionalità come il Live Server richiedono internet.</p>
+
+<h2>🖥️ Posso usarlo su un computer vecchio?</h2>
+<p>Assolutamente. VS Code è leggero e ottimizzato anche per macchine meno potenti.</p>
+
+<h2>🔒 È sicuro?</h2>
+<p>Sì. È sviluppato da Microsoft e ha una community attiva che monitora costantemente la sicurezza delle estensioni.</p>
+
+</body>
+</html>
