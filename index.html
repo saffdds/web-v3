@@ -4,69 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cos'è Visual Studio Code?</title>
-  <script type="text/javascript">
-    function startTime() {
-      var today = new Date();
-      var h = today.getHours();
-      var m = today.getMinutes();       
-      var s = today.getSeconds();
-      m = checkTime(m);
-      s = checkTime(s);
-      document.getElementById('txt').innerHTML = h + ":" + m + ":" + s;
-      setTimeout(startTime, 500);
-    }
-
-    function checkTime(i) {
-      if (i < 10) {
-        i = "0" + i;
-      }
-      return i;
-    }
-  </script>
-  <script>
-  function mostraDataSeparata() {
-  const oggi = new Date();
-  const opzioni = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-  const dataFormattata = oggi.toLocaleDateString('it-IT', opzioni);
-  document.getElementById("dataOggi").innerHTML = "📅 Oggi è " + dataFormattata;
-}
-
-</script>
-
-
-  <style>
-    @page { size: 21cm 29.7cm; margin: 2cm }
-    p { margin-bottom: 0.25cm; line-height: 115%; background: transparent }
-    pre { background: transparent }
-    pre.western { font-family: "Courier New", monospace; font-size: 10pt }
-    pre.cjk { font-family: "NSimSun", monospace; font-size: 10pt }
-    pre.ctl { font-family: "Courier New", monospace; font-size: 10pt }
-
-    a:visited {
-      color: blue;
-    }
-
-    ol {
-      counter-reset: item;
-    }
-    li {
-      display: block;
-    }
-    li:before {
-      content: counter(item) ". ";
-      counter-increment: item;
-      color: red;
-    }
-
-    button {
-      background-color: blue;
-      color: white;
-      padding: 10px;
-      border-radius: 5px;
-      font-size: 16px;
-    }
-  </style>
-  
+  <script src="script.js"></script>
+<link rel="stylesheet" href="style.css">
 </head>
 <body onload="startTime(); mostraDataSeparata()">
 
@@ -78,25 +17,6 @@
   <button onclick="readPage()">🗣️ Leggi la pagina</button>
   <button onclick="stopReading()">🛑 Interrompi</button>
   <hr>
-
-  <script>
-    let utterance;
-
-    function readPage() {
-      const text = document.body.innerText;
-      utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = "it-IT";
-      utterance.rate = 1;
-      utterance.pitch = 1;
-      utterance.volume = 1;
-      speechSynthesis.speak(utterance);
-    }
-
-    function stopReading() {
-      speechSynthesis.cancel();
-    }
-  </script>
-
   <h1>Cos'è e perché uso VS Code</h1>
   <h2>Ora vediamo cos'è VS CODE (Visual Studio Code)</h2>
 
